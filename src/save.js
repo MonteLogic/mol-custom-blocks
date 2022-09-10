@@ -13,12 +13,11 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
  *
+ * @param {Object} props            Properties passed to the function.
+ * @param {Object} props.attributes Available block attributes.
  * @return {WPElement} Element to render.
  */
-export default function save() {
-	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Simple Block – hello from the saved content!' }
-		</p>
-	);
+export default function save( { attributes } ) {
+	const blockProps = useBlockProps.save();
+	return <div { ...blockProps }>{ attributes.message }</div>;
 }

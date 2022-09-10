@@ -5,8 +5,13 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-simple-block {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+@font-face {
+	font-family: Gilbert;
+	src: url(../assets/gilbert-color.otf);
+	font-weight: 700;
+}
+
+p.wp-block-create-block-gutenpride {
+	font-family: Gilbert, sans-serif;
+	font-size: 64px;
 }
