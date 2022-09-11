@@ -26,7 +26,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save();
-	return <div { ...blockProps }>Statement, { attributes.time  }   </div>;
+	return <div { ...blockProps }>{attributes.time}  </div>;
 }
 
 
