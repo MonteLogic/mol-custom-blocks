@@ -17,7 +17,18 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @param {Object} props.attributes Available block attributes.
  * @return {WPElement} Element to render.
  */
+
+/**
+ *
+ * {...blockProps} renders out to: "wp-block-create-block-gutenpride"
+ *
+ */
+
 export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save();
-	return <div { ...blockProps }>{ attributes.message }</div>;
+	return <div { ...blockProps }>Statement, { attributes.time  }   </div>;
 }
+
+
+
+

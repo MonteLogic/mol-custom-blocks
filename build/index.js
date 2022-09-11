@@ -47,18 +47,25 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 
+
+
+function TimeStart() {
+  return 25;
+}
+
 function Edit(_ref) {
   let {
     attributes,
     setAttributes
   } = _ref;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "This is a paragraph. Which cannot be editied from Gutenberg editor"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-    value: attributes.message,
-    onChange: val => setAttributes({
-      message: val
-    })
-  }));
+  var echoOut = TimeStart();
+  {
+    attributes.time = TimeStart();
+  }
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Card, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CardBody, {
+    value: attributes.time
+  }, attributes.time, " ")));
 }
 
 /***/ }),
@@ -105,6 +112,14 @@ __webpack_require__.r(__webpack_exports__);
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
+ */
+
+/*
+ *
+ * It appears that registerBlockType is taken from WordPress blocks and 
+ * should have a parameter of save. 
+ *
+ *
  */
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_5__.name, {
@@ -165,12 +180,18 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 
+/**
+ *
+ * {...blockProps} renders out to: "wp-block-create-block-gutenpride"
+ *
+ */
+
 function save(_ref) {
   let {
     attributes
   } = _ref;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, attributes.message);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, "Statement, ", attributes.time, "   ");
 }
 
 /***/ }),

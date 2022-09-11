@@ -28,6 +28,15 @@ import metadata from './block.json';
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
+
+/*
+ *
+ * It appears that registerBlockType is taken from WordPress blocks and 
+ * should have a parameter of save. 
+ *
+ *
+ */
+
 registerBlockType( metadata.name, {
 	/**
 	 * Used to construct a preview for the block to be shown in the block inserter.
@@ -47,3 +56,7 @@ registerBlockType( metadata.name, {
 	 */
 	save,
 } );
+
+
+
+

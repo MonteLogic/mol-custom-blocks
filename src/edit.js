@@ -25,15 +25,28 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
+import { Card, CardBody } from '@wordpress/components';
+
+
+
+function TimeStart(){
+
+	return 25;
+
+}
+
 export default function Edit( { attributes, setAttributes } ) {
 	const blockProps = useBlockProps();
+	var echoOut = TimeStart();
+	{ attributes.time = TimeStart() } 
 	return (
 		<div { ...blockProps }>
-		<p>This is a paragraph. Which cannot be editied from Gutenberg editor</p>
-			<TextControl
-				value={ attributes.message }
-				onChange={ ( val ) => setAttributes( { message: val } ) }
-			/>
+      
+		    <Card>
+        <CardBody value={attributes.time}> 
+		      {attributes.time} </CardBody>
+    </Card>
+
 		</div>
 	);
 }

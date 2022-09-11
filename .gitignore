@@ -5,6 +5,18 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Vim files
+*.swp
+*.swo
+
+*.js.swp
+*.js.swo
+*.scss.swp
+*.scss.swo
+
+
+
+
 # Coverage directory used by tools like istanbul
 coverage
 
