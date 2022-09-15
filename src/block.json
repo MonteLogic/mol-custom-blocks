@@ -12,6 +12,11 @@
 			"type": "string",
 			"source": "text",
 			"selector": "div"
+		},
+		"hasChanged": {
+			"type": "integer",
+			"source": "text",
+			"selector": "div"
 		}
 	},
 	"supports": {

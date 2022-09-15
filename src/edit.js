@@ -27,18 +27,24 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 import { Card, CardBody } from '@wordpress/components';
 
+import { useEffect } from '@wordpress/element';
 
 
-function TimeStart(){
 
-	return 25;
 
-}
+
+
 
 export default function Edit( { attributes, setAttributes } ) {
+
+useEffect(() => {
+	console.log('Inserted');
+	return () => {
+		console.log('Removed');
+	};
+}, []);
 	const blockProps = useBlockProps();
-	var echoOut = TimeStart();
-	{ attributes.time = TimeStart() } 
+	{ attributes.time = 5 } 
 	return (
 		<div { ...blockProps }>
       
