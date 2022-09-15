@@ -37,21 +37,42 @@ import { useEffect } from '@wordpress/element';
 
 export default function Edit( { attributes, setAttributes } ) {
 
+	const blockProps = useBlockProps();
+	const hasCreatedVar = attributes.hasCreated;
 useEffect(() => {
+
+	console.log( attributes  );
+	if ( !attributes.hasCreated ){
+	  console.log( attributes  );
+	  console.log ( "Not = 1" );
+
+	  const d = new Date();
+	  console.log(d);
+	  console.log("Updated time");
+      attributes.time = d.toString(); 
+      attributes.hasCreated = 1; 
+	  console.log( attributes  );
+
+	}
+      attributes.hasCreated =+ 1;
+
+	  console.log( attributes  );
+
 	console.log('Inserted');
 	return () => {
 		console.log('Removed');
+    	attributes.hasCreated = 0; 
+		console.log ( attributes.hasCreated );
+
 	};
 }, []);
-	const blockProps = useBlockProps();
-	{ attributes.hasChanged = 1 } 
+
+
 	return (
 		<div { ...blockProps }>
-      
-		    <Card>
-        <CardBody value={attributes.hasChanged}> 
-		      {attributes.hasChanged} </CardBody>
-    </Card>
+		<Card>
+          <CardBody value={attributes.time}><b>New Day:</b> {attributes.time}  </CardBody>
+	   </Card>
 
 		</div>
 	);
