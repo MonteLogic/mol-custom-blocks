@@ -44,13 +44,13 @@ useEffect(() => {
 	};
 }, []);
 	const blockProps = useBlockProps();
-	{ attributes.time = 5 } 
+	{ attributes.hasChanged = 1 } 
 	return (
 		<div { ...blockProps }>
       
 		    <Card>
-        <CardBody value={attributes.time}> 
-		      {attributes.time} </CardBody>
+        <CardBody value={attributes.hasChanged}> 
+		      {attributes.hasChanged} </CardBody>
     </Card>
 
 		</div>

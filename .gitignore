@@ -40,3 +40,12 @@ node_modules/
 
 # dotenv environment variables file
 .env
+build/block.json
+build/index.asset.php
+build/index.css
+build/index.css.map
+build/index.js
+build/index.js.map
+build/style-index.css
+build/style-index.css.map
+package-lock.json
