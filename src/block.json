@@ -1,34 +1,31 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/gutenpride",
+	"name": "create-block/mol-custom-blocks",
 	"version": "0.1.0",
-	"title": "Gutenpride",
+	"title": "Monte Logic's Custom Blocks",
 	"category": "text",
 	"icon": "flag",
 	"description": "A Gutenberg block to show your pride! This block enables you to type text and style it with the color font Gilbert from Type with Pride.",
 	"attributes": {
 		"message": {
-			"type": "string",
-			"source": "text",
-			"selector": "div"
+			"type": "string"
 		},
 		"time": {
-			"type": "string",
-			"source": "text",
-			"selector": "div"
+			"type": "string"
 		},
 		"hasCreated": {
-			"type": "string",
-			"source": "text",
-			"selector": "div"
+			"type": "integer",
+			"default": 0
 		}
 	},
 	"supports": {
 		"html": false
 	},
-	"textdomain": "gutenpride",
+	"textdomain": "mol-custom-blocks",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"
 }
+
+
