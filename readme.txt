@@ -10,7 +10,7 @@ Example block scaffolded with Create Block tool.
 
 == Description ==
 
-Monte Logic's custom blocks. Included is a time logger. 
+Monte Logic's custom blocks, included is a time logger. 
 
 
 == toDo ==
