@@ -30,34 +30,28 @@
  import { useEffect } from '@wordpress/element';
  
  
- export default function Edit( { attributes, setAttributes } ) {
+ export default function Edit( { attributes: { hasCreated, time }, setAttributes } ) {
  
 	 const blockProps = useBlockProps();
 	 useEffect(() => {
-		console.log ({...attributes});
-		 if ( attributes.hasCreated != 1 ){
+		 if ( hasCreated != 1 ){
+			 // The default value of hasCreated has been set to 0.
 			 const d = new Date();
 			 setAttributes( { hasCreated: 1, time: d.toString()} )
-			 console.log (attributes.hasCreated);
 		 }
 		 return () => {
-			console.log('Removed');
-
+			// If the block is deleted.
 			setAttributes( { hasCreated: 0, time: d.toString()} )
-			console.log ( attributes.hasCreated  );
-	
 		};
 		 
 	 }, []);
  
- 
 	  return (
 		  <div { ...blockProps }>
 		  <Card>
-			<CardBody value={attributes.time}><b>New Day:</b> {attributes.time}  </CardBody>
+			<CardBody value={time}><b>New Day:</b> {time}  </CardBody>
 		 </Card>
  
 		  </div>
 	  );
   }
- 
